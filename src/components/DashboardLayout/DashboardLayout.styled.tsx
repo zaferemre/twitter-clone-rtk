@@ -18,6 +18,11 @@ export const ContentArea = styled.main<ContentProps>`
   flex: 1;
   transition: transform 0.3s ease;
   transform: ${({ isShifted }) =>
-    isShifted ? "translateX(0)" : "translateX(-400px)"};
+    isShifted ? "translateX(0)" : "translateX(-300px)"};
   will-change: transform;
+  height: 100vh;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;

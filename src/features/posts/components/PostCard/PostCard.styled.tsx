@@ -5,6 +5,7 @@ const Card = styled.div`
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
+  border-left: 4px solid #df0005;
 `;
 
 const Header = styled.div`
@@ -16,7 +17,8 @@ const Header = styled.div`
 const Avatar = styled.img`
   width: 40px;
   height: 40px;
-  border-radius: 9999px;
+  border-radius: 25%;
+  border: 2px solid #df0005;
   margin-right: 0.75rem;
 `;
 
@@ -29,6 +31,7 @@ const AuthorName = styled.h4`
 const Title = styled.h3`
   margin: 0.5rem 0;
   font-size: 1.1rem;
+  color: #6b0001;
 `;
 
 const Body = styled.p`
@@ -53,7 +56,7 @@ const LikeButton = styled.button<{ liked: boolean }>`
 const CommentButton = styled.button`
   background: none;
   border: none;
-  color: #2563eb;
+  color: #6b0001;
   cursor: pointer;
   font-weight: 500;
 `;

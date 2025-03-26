@@ -51,7 +51,7 @@ export const UserProfile = styled.div`
   img {
     width: 36px;
     height: 36px;
-    border-radius: 20%;
+    border-radius: 25%;
     border: 2px solid white;
     background-color: white;
   }
