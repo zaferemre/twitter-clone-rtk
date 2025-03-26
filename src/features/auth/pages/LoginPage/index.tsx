@@ -1,13 +1,32 @@
 import React from "react";
-import styled from "styled-components";
-import UserSelector from "../../components/UserSelector/index.tsx";
-import { Container } from "./LoginPage.styled.tsx";
-import Login from "../../components/Login/index.tsx";
+import {
+  Container,
+  LeftPane,
+  RightPane,
+  BgImage,
+} from "./LoginPage.styled.tsx";
+import { useNavigate } from "react-router-dom";
+import { useAppSelector } from "../../../../app/hooks.ts";
+import LoginForm from "../../components/LoginForm/index.tsx";
+import GoogleLoginButton from "../../components/GoogleLoginButton/index.tsx";
+import JsonUserDropdown from "../../components/JSONUserDropdown/index.tsx";
 
 const LoginPage = () => {
+  const user = useAppSelector((state) => state.auth.user);
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (user) {
+      navigate("/posts");
+    }
+  }, [user, navigate]);
   return (
     <Container>
-      <Login />
+      <BgImage />
+      <LeftPane>
+        <LoginForm />
+      </LeftPane>
+      <RightPane />
     </Container>
   );
 };
