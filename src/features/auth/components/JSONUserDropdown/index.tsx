@@ -4,7 +4,6 @@ import { useAppDispatch } from "../../../../app/hooks.ts";
 import { setUser, setAuthMethod } from "../../authSlice.ts";
 import { useState } from "react";
 import {
-  ToggleButton,
   UserList,
   UserItem,
   SubmitButton,
@@ -34,6 +33,12 @@ const JsonUserDropdown = () => {
             {users?.map((user) => (
               <UserItem key={user.id}>
                 <button onClick={() => handleSelect(user)}>
+                  <img
+                    src={`https://api.dicebear.com/7.x/thumbs/svg?seed=${
+                      user?.username ?? user?.name ?? "user"
+                    }`}
+                    alt="User Avatar"
+                  />
                   {user.name} ({user.email})
                 </button>
               </UserItem>

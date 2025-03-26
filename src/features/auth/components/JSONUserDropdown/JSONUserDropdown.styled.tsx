@@ -20,28 +20,22 @@ export const SubmitButton = styled.button`
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
   }
 `;
-const ToggleButton = styled.button`
-  background-color: transparent;
-  color: #2563eb;
-  font-weight: 500;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  margin-bottom: 1rem;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
 
 const UserList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  img {
+    width: 15px;
+    border-radius: 100%;
+    display: inline-block;
+  }
 `;
 
 const UserItem = styled.li`
   margin-bottom: 0.5rem;
+  display: flex;
 
   button {
     background-color: #f9fafb;
@@ -57,4 +51,4 @@ const UserItem = styled.li`
     }
   }
 `;
-export { ToggleButton, UserList, UserItem };
+export { UserList, UserItem };

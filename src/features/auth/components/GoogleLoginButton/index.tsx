@@ -13,12 +13,14 @@ const GoogleLoginButton = () => {
       const provider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
+      console.log("Firebase user:", user);
 
       dispatch(
         setUser({
           id: user.uid,
           name: user.displayName ?? "",
           email: user.email ?? "",
+          photoURL: user.photoURL ?? "",
         })
       );
       dispatch(setAuthMethod("firebase"));
