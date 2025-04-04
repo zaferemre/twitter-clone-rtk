@@ -1,4 +1,4 @@
-import { api } from "../../../app/api";
+import { api } from "../../../app/api.ts";
 import { Comments } from "../types";
 
 export const commentsApi = api.injectEndpoints({
