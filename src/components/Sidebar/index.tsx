@@ -43,13 +43,13 @@ const Sidebar = () => {
         >
           Liked Posts
         </NavItem>
-        <NavItem>Projects</NavItem>
+        <NavItem>Albums</NavItem>
         <NavItem>Calendar</NavItem>
         <NavItem>Documents</NavItem>
         <NavItem>Reports</NavItem>
       </NavList>
 
-      <Logo src="./assets/Akbank-icon.png" />
+      <Logo src="../assets/Akbank-icon.png" />
     </SidebarContainer>
   );
 };

@@ -6,9 +6,11 @@ import PostDetailPage from "../features/posts/pages/PostDetailPage/index.tsx";
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<LoginPage />} />
-      <Route path="/posts" element={<PostsPage />} />
-      <Route path="/posts/:id" element={<PostDetailPage />} />
+      <ProtectedRoute>
+        <Route path="/posts" element={<PostsPage />} />
+        <Route path="/posts/:id" element={<PostDetailPage />} />
+      </ProtectedRoute>
+      <Route path="/login" element={<LoginPage />} />
     </Routes>
   );
 };
