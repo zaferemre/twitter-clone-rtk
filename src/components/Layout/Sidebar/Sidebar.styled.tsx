@@ -60,3 +60,13 @@ export const UserProfile = styled.div`
     font-size: 0.9rem;
   }
 `;
+export const TopSection = styled.div`
+  position: relative;
+`;
+
+export const BackButtonContainer = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+  z-index: 2;
+`;

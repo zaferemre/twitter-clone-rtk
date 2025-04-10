@@ -5,10 +5,13 @@ import {
   NavItem,
   UserProfile,
   Logo,
+  TopSection,
+  BackButtonContainer,
 } from "./Sidebar.styled.tsx";
 
 import { useAppDispatch, useAppSelector } from "../../../app/redux/hooks.ts";
 import { setActiveSidebarView } from "../../../app/redux/slices/uiSlice.ts";
+import BackButton from "../../Buttons/BackButton/index.tsx";
 
 const Sidebar = () => {
   const user = useAppSelector((state) => state.auth.user);
@@ -26,10 +29,15 @@ const Sidebar = () => {
 
   return (
     <SidebarContainer>
-      <UserProfile>
-        <img src={avatarSrc} alt="User Avatar" />
-        <span>{user?.name}</span>
-      </UserProfile>
+      <TopSection>
+        <UserProfile>
+          <img src={avatarSrc} alt="User Avatar" />
+          <span>{user?.name}</span>
+        </UserProfile>
+        <BackButtonContainer>
+          <BackButton />
+        </BackButtonContainer>
+      </TopSection>
       <NavList>
         <NavItem
           active={active === "feed"}
