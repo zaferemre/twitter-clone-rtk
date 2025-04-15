@@ -39,3 +39,9 @@ export interface Props {
   post: Post;
   author: User;
 }
+
+export interface AlbumProps {
+  album: Albums;
+  author: User;
+  photos: Photos[];
+}
