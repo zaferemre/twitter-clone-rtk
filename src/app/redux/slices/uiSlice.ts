@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface UIState {
-  activeSidebarView: "feed" | "liked";
+  activeSidebarView: "feed" | "liked" | "followings";
 }
 
 const initialState: UIState = {

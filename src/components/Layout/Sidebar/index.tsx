@@ -51,10 +51,12 @@ const Sidebar = () => {
         >
           Liked Posts
         </NavItem>
-        <NavItem>Albums</NavItem>
-        <NavItem>Calendar</NavItem>
-        <NavItem>Documents</NavItem>
-        <NavItem>Reports</NavItem>
+        <NavItem
+          active={active === "followings"}
+          onClick={() => dispatch(setActiveSidebarView("followings"))}
+        >
+          Followings
+        </NavItem>
       </NavList>
 
       <Logo src="../assets/Akbank-icon.png" />

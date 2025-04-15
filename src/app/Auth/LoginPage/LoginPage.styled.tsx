@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-// Full-page container
 const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -8,9 +7,12 @@ const Container = styled.div`
   height: 100vh;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
-// Left half (form, login UI)
 const LeftPane = styled.div`
   width: 50%;
   display: flex;
@@ -18,10 +20,14 @@ const LeftPane = styled.div`
   align-items: center;
   padding: 2rem;
   position: relative;
-  z-index: 1; // above BgImage if used
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 1.5rem;
+  }
 `;
 
-// Right half (optional image/graphic)
 const RightPane = styled.div`
   width: 50%;
   background-color: #f5f5f5;
@@ -31,7 +37,6 @@ const RightPane = styled.div`
   }
 `;
 
-// Optional background image (behind everything)
 const BgImage = styled.div`
   position: absolute;
   top: 0;
@@ -42,8 +47,12 @@ const BgImage = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   z-index: 0;
+
+  @media (max-width: 768px) {
+    opacity: 0.25;
+    filter: blur(4px);
+  }
 `;
 
 export { Container, LeftPane, RightPane, BgImage };

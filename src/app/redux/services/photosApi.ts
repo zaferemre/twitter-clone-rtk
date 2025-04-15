@@ -1,14 +1,15 @@
 import { api } from "../../../app/redux/api.ts";
-import { Photos, User } from "../../../types/types.ts";
+import { Photos, Albums } from "../../../types/types.ts"; // Use your defined types
 
 export const photosApi = api.injectEndpoints({
   endpoints: (build) => ({
     getPhotos: build.query<Photos[], void>({
       query: () => "photos",
     }),
-    getAlbums: build.query<User[], void>({
-      query: () => "users",
+    getAlbums: build.query<Albums[], void>({
+      query: () => "albums",
     }),
   }),
 });
+
 export const { useGetPhotosQuery, useGetAlbumsQuery } = photosApi;
