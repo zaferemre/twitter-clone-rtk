@@ -5,7 +5,6 @@ import FollowingsSideBar from "../FollowingsSideBar/index.tsx";
 const FollowingsBar = ({ isVisible }: { isVisible: boolean }) => {
   return (
     <SidebarContainer isVisible={isVisible}>
-      <h2>Followings</h2>
       <FollowingsSideBar />
     </SidebarContainer>
   );

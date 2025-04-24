@@ -8,7 +8,11 @@ import CommentList from "../../../components/posts/CommentList/index.tsx";
 import DashboardLayout from "../../../components/Layout/DashboardLayout/index.tsx";
 import PostCard from "../../../components/posts/PostCard/index.tsx";
 
-import { PostDetailWrapper } from "./PostDetailPage.styled.tsx";
+import {
+  PostDetailWrapper,
+  MobileBackButton,
+} from "./PostDetailPage.styled.tsx";
+import BackButton from "../../../components/Buttons/BackButton/index.tsx";
 
 const PostDetailPage = () => {
   const { id } = useParams();
@@ -26,6 +30,10 @@ const PostDetailPage = () => {
   const author = users?.find((u) => u.id === post.userId);
   return (
     <DashboardLayout>
+      <MobileBackButton>
+        <BackButton />
+      </MobileBackButton>
+
       <PostDetailWrapper>
         {author && <PostCard post={post} author={author} />}
         {comments && <CommentList comments={comments} />}

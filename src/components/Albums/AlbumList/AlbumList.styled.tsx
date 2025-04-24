@@ -9,15 +9,4 @@ const Feed = styled.div`
   margin-top: 1rem;
 `;
 
-const Loading = styled.p`
-  text-align: center;
-  padding: 2rem;
-  font-size: 1.1rem;
-`;
-
-const Error = styled.p`
-  text-align: center;
-  color: red;
-  padding: 2rem;
-`;
-export { Feed, Loading, Error };
+export { Feed };

@@ -21,15 +21,15 @@ const Header = styled.div`
 `;
 
 const Avatar = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 25%;
-  border: 2px solid #df0005;
+  border: 0.125rem solid #df0005;
   margin-right: 0.75rem;
 
   @media (max-width: 600px) {
-    width: 32px;
-    height: 32px;
+    width: 2rem;
+    height: 2rem;
   }
 `;
 
@@ -58,7 +58,7 @@ const Body = styled.p`
   font-size: 0.95rem;
 
   @media (max-width: 600px) {
-    font-size: 0.875rem;
+    font-size: 0.875rem; // 14px
   }
 `;
 
@@ -79,6 +79,7 @@ const LikeButton = styled.button<{ liked: boolean }>`
   color: ${({ liked }) => (liked ? "#ef4444" : "#4b5563")};
   font-weight: 500;
   cursor: pointer;
+  font-size: 0.95rem;
 `;
 
 const CommentButton = styled.button`
@@ -87,6 +88,7 @@ const CommentButton = styled.button`
   color: #6b0001;
   cursor: pointer;
   font-weight: 500;
+  font-size: 0.95rem;
 `;
 
 const AlbumButton = styled.button`
@@ -94,6 +96,7 @@ const AlbumButton = styled.button`
   border: none;
   color: #6b0001;
   cursor: pointer;
+  font-size: 0.95rem;
 `;
 
 export {

@@ -70,3 +70,19 @@ export const BackButtonContainer = styled.div`
   right: 0.5rem;
   z-index: 2;
 `;
+export const SignOutButton = styled(NavItem)`
+  color: #ffdddd;
+  background-color: #5e0000;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  text-align: center;
+  &:hover {
+    background-color: #7a0000;
+  }
+`;

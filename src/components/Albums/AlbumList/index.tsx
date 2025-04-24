@@ -7,34 +7,15 @@ import { useGetUsersQuery } from "../../../app/redux/services/authApi.ts";
 import { useAppSelector } from "../../../app/redux/hooks.ts";
 import AlbumCard from "../AlbumCard/index.tsx";
 import { Albums, User, Photos } from "../../../types/types.ts";
-import { Loading, Feed, Error } from "./AlbumList.styled.tsx";
+import { Feed } from "./AlbumList.styled.tsx";
 
 const AlbumList = () => {
   const currentUser = useAppSelector((state) => state.auth.user);
 
-  const {
-    data: albums,
-    isLoading: albumsLoading,
-    isError: albumsError,
-  } = useGetAlbumsQuery();
+  const { data: albums } = useGetAlbumsQuery();
+  const { data: users } = useGetUsersQuery();
 
-  const {
-    data: users,
-    isLoading: usersLoading,
-    isError: usersError,
-  } = useGetUsersQuery();
-
-  const {
-    data: photos,
-    isLoading: photosLoading,
-    isError: photosError,
-  } = useGetPhotosQuery();
-
-  if (albumsLoading || usersLoading || photosLoading)
-    return <Loading>Loading albums...</Loading>;
-
-  if (albumsError || usersError || photosError)
-    return <Error>Failed to load albums, users, or photos.</Error>;
+  const { data: photos } = useGetPhotosQuery();
 
   const userAlbums =
     albums?.filter((album) => album.userId === currentUser?.id) ?? [];

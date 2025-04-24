@@ -4,9 +4,6 @@ import LoginPage from "../app/Auth/LoginPage/index.tsx";
 import PostsPage from "../app/Posts/PostsPage/index.tsx";
 import PostDetailPage from "../app/Posts/PostDetailPage/index.tsx";
 import ProtectedRoute from "../utils/ProtectedRoute.tsx";
-import DashboardLayout from "../components/Layout/DashboardLayout/index.tsx";
-import PostList from "../components/posts/PostList/index.tsx";
-import AlbumList from "../components/Albums/AlbumList/index.tsx";
 
 const AppRoutes = () => {
   return (
@@ -22,10 +19,7 @@ const AppRoutes = () => {
                 path="/posts"
                 element={
                   <ProtectedRoute>
-                    <DashboardLayout>
-                      <PostList />
-                      <AlbumList />
-                    </DashboardLayout>
+                    <PostsPage />
                   </ProtectedRoute>
                 }
               />

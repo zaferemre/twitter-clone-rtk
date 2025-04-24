@@ -7,6 +7,7 @@ import {
   Logo,
   TopSection,
   BackButtonContainer,
+  SignOutButton,
 } from "./Sidebar.styled.tsx";
 
 import { useAppDispatch, useAppSelector } from "../../../app/redux/hooks.ts";
@@ -58,7 +59,9 @@ const Sidebar = () => {
           Followings
         </NavItem>
       </NavList>
-
+      <SignOutButton as="a" href="/login">
+        Sign Out
+      </SignOutButton>
       <Logo src="../assets/Akbank-icon.png" />
     </SidebarContainer>
   );

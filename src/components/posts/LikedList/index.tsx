@@ -2,30 +2,18 @@ import React from "react";
 import { useGetPostsQuery } from "../../../app/redux/services/postApi.ts";
 import { useGetUsersQuery } from "../../../app/redux/services/authApi.ts";
 import PostCard from "../PostCard/index.tsx";
-import styled from "styled-components";
+
 import { Post, User } from "../../../types/types.ts";
 
-import { Loading, Feed, Error } from "./LikedList.styled.tsx";
+import { Feed } from "./LikedList.styled.tsx";
 import { useAppSelector } from "../../../app/redux/hooks.ts";
 
 const LikedList = () => {
-  const {
-    data: posts,
-    isLoading: postsLoading,
-    isError: postsError,
-  } = useGetPostsQuery();
+  const { data: posts } = useGetPostsQuery();
 
-  const {
-    data: users,
-    isLoading: usersLoading,
-    isError: usersError,
-  } = useGetUsersQuery();
+  const { data: users } = useGetUsersQuery();
   const likedPostIds = useAppSelector((state) => state.posts.likedPostsIds);
   const likedPosts = posts?.filter((post) => likedPostIds[post.id]) ?? [];
-
-  if (postsLoading || usersLoading) return <Loading>Loading feed...</Loading>;
-  if (postsError || usersError)
-    return <Error>Failed to load posts or users.</Error>;
 
   return (
     <Feed>
