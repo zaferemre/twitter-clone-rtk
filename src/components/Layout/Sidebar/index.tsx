@@ -13,6 +13,7 @@ import {
 import { useAppDispatch, useAppSelector } from "../../../app/redux/hooks.ts";
 import { setActiveSidebarView } from "../../../app/redux/slices/uiSlice.ts";
 import BackButton from "../../Buttons/BackButton/index.tsx";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const user = useAppSelector((state) => state.auth.user);
@@ -33,12 +34,18 @@ const Sidebar = () => {
       <TopSection>
         <UserProfile>
           <img src={avatarSrc} alt="User Avatar" />
-          <span>{user?.name}</span>
+          <Link
+            to={`/profile/${user?.id}`}
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <span>{user?.name}</span>
+          </Link>
         </UserProfile>
         <BackButtonContainer>
           <BackButton />
         </BackButtonContainer>
       </TopSection>
+
       <NavList>
         <NavItem
           active={active === "feed"}
@@ -58,10 +65,21 @@ const Sidebar = () => {
         >
           Followings
         </NavItem>
+        {/* New: My Profile NavItem */}
+        <NavItem>
+          <Link
+            to={`/profile/${user?.id}`}
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            My Profile
+          </Link>
+        </NavItem>
       </NavList>
+
       <SignOutButton as="a" href="/login">
         Sign Out
       </SignOutButton>
+
       <Logo src="../assets/Akbank-icon.png" />
     </SidebarContainer>
   );

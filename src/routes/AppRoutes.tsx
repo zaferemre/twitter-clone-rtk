@@ -4,6 +4,7 @@ import LoginPage from "../app/Auth/LoginPage/index.tsx";
 import PostsPage from "../app/Posts/PostsPage/index.tsx";
 import PostDetailPage from "../app/Posts/PostDetailPage/index.tsx";
 import ProtectedRoute from "../utils/ProtectedRoute.tsx";
+import ProfilePage from "../app/Profile/ProfilePage/index.tsx";
 
 const AppRoutes = () => {
   return (
@@ -11,28 +12,26 @@ const AppRoutes = () => {
       <Route path="/login" element={<LoginPage />} />
 
       <Route
-        path="/*"
+        path="/posts"
         element={
           <ProtectedRoute>
-            <Routes>
-              <Route
-                path="/posts"
-                element={
-                  <ProtectedRoute>
-                    <PostsPage />
-                  </ProtectedRoute>
-                }
-              />
-
-              <Route
-                path="/posts/:id"
-                element={
-                  <ProtectedRoute>
-                    <PostDetailPage />
-                  </ProtectedRoute>
-                }
-              />
-            </Routes>
+            <PostsPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/posts/:id"
+        element={
+          <ProtectedRoute>
+            <PostDetailPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/profile/:id"
+        element={
+          <ProtectedRoute>
+            <ProfilePage />
           </ProtectedRoute>
         }
       />

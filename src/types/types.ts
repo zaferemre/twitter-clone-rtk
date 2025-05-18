@@ -1,9 +1,10 @@
 export interface User {
   id: number | string;
   name: string;
-  username?: string;
+  username: string;
   email: string;
   photoURL?: string;
+  uid?: string;
 }
 
 export interface Post {
@@ -44,4 +45,29 @@ export interface AlbumProps {
   album: Albums;
   author: User;
   photos: Photos[];
+}
+
+export interface UserDetails {
+  id: string | number;
+  name: string;
+  username: string;
+  email?: string;
+  phone?: string;
+  website?: string;
+  address?: {
+    street?: string;
+    suite?: string;
+    city?: string;
+    zipcode?: string;
+    geo?: {
+      lat?: string;
+      lng?: string;
+    };
+  };
+  company?: {
+    name?: string;
+    catchPhrase?: string;
+    bs?: string;
+  };
+  photoURL?: string;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../app/redux/hooks.ts";
 import { toggleLike } from "../../../app/redux/slices/postSlice.ts";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {
   Card,
   Header,
@@ -13,7 +13,6 @@ import {
   LikeButton,
   CommentButton,
 } from "./PostCard.styled.tsx";
-
 import { Props } from "../../../types/types.ts";
 
 const PostCard = ({ post, author }: Props) => {
@@ -29,7 +28,12 @@ const PostCard = ({ post, author }: Props) => {
     <Card>
       <Header>
         <Avatar src={avatarSrc} alt="avatar" />
-        <AuthorName>{author.name}</AuthorName>
+        <Link
+          to={`/profile/${author.id}`}
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          <AuthorName>{author.name}</AuthorName>
+        </Link>
       </Header>
       <Title>{post.title}</Title>
       <Body>{post.body}</Body>

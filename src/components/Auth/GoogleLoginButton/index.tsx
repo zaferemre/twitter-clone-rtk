@@ -22,6 +22,7 @@ const GoogleLoginButton = () => {
           name: user.displayName ?? "",
           email: user.email ?? "",
           photoURL: user.photoURL ?? "",
+          username: user.email?.split("@")[0] ?? user.uid.slice(0, 6),
         })
       );
       dispatch(setAuthMethod("firebase"));
