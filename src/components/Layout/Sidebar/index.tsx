@@ -65,7 +65,6 @@ const Sidebar = () => {
         >
           Followings
         </NavItem>
-        {/* New: My Profile NavItem */}
         <NavItem>
           <Link
             to={`/profile/${user?.id}`}

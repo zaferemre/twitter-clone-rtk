@@ -12,7 +12,16 @@ const AlbumDisplay = ({ photos }: AlbumDisplayProps) => {
   return (
     <Grid>
       {firstFour.map((photo) => (
-        <Thumbnail key={photo.id} src={photo.thumbnailUrl} alt={photo.title} />
+        <Thumbnail
+          key={photo.id}
+          src={photo.thumbnailUrl}
+          alt={photo.title}
+          onError={(e) => {
+            (
+              e.target as HTMLImageElement
+            ).src = `https://picsum.photos/200?random=${photo.id}`;
+          }}
+        />
       ))}
     </Grid>
   );

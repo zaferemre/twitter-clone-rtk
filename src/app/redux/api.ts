@@ -5,5 +5,5 @@ export const api = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://jsonplaceholder.typicode.com/",
   }),
-  endpoints: () => ({}), // Will extend this per feature
+  endpoints: () => ({}),
 });

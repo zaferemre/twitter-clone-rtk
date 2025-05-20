@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useGetUsersQuery } from "../../../features/auth/services/authApi.ts";
+import { useGetUsersQuery } from "../../../app/redux/services/authApi.ts";
 import { useAppDispatch } from "../../../app/redux/hooks.ts";
-import { setUser } from "../../../app/slices/authSlice.ts";
-import { User } from "../../../features/auth/types.ts";
+import { setUser } from "../../../app/redux/slices/authSlice.ts";
+import { User } from "../../../types/types.ts";
 import { Wrapper, Title, UserList, UserItem } from "./UserSelector.styled.tsx";
 
 const UserSelector = () => {

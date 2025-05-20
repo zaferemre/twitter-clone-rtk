@@ -75,6 +75,7 @@ export const SignOutButton = styled.button`
   margin-left: 1rem;
   margin-right: 1rem;
   text-align: center;
+  text-decoration: none;
   &:hover {
     background-color: #7a0000;
   }

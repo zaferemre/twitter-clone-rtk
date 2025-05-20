@@ -10,6 +10,7 @@ import {
 } from "./MobileHeader.styled.tsx";
 import { useAppDispatch, useAppSelector } from "../../../app/redux/hooks.ts";
 import { setActiveSidebarView } from "../../../app/redux/slices/uiSlice.ts";
+import { Link } from "react-router-dom";
 
 const MobileHeader = () => {
   const [open, setOpen] = useState(false);
@@ -57,6 +58,14 @@ const MobileHeader = () => {
             onClick={() => handleSelect("followings")}
           >
             Followings
+          </MenuItem>
+          <MenuItem>
+            <Link
+              to={`/profile/${user?.id}`}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              My Profile
+            </Link>
           </MenuItem>
           <SignOutButton as="a" href="/login">
             Sign Out

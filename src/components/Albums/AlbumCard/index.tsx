@@ -22,7 +22,7 @@ const AlbumCard = ({ album, author, photos }: AlbumProps) => {
       </Header>
       <Title>{album.title}</Title>
       {photos.length > 0 && (
-        <div style={{ marginTop: "1rem" }}>
+        <div>
           <AlbumDisplay photos={photos} />
         </div>
       )}

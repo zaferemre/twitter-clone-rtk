@@ -2,14 +2,12 @@ import React from "react";
 import {
   Section,
   Wrapper,
-  Logo,
   Card,
   Heading,
   Form,
   Label,
   Input,
   SubmitButton,
-  FooterText,
 } from "./LoginForm.styled.tsx";
 import GoogleLoginButton from "../GoogleLoginButton/index.tsx";
 import JsonUserDropdown from "../JSONUserDropdown/index.tsx";
@@ -45,9 +43,6 @@ const LoginForm = () => {
             <SubmitButton type="submit">Sign in</SubmitButton>
             <GoogleLoginButton />
             <JsonUserDropdown />
-            <FooterText>
-              Don’t have an account yet? <a href="#">Sign up</a>
-            </FooterText>
           </Form>
         </Card>
       </Wrapper>
